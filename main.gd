@@ -46,7 +46,7 @@ func _on_mob_timer_timeout() -> void:
 	direction += randf_range(-PI/4, PI/4)
 	mob.rotation = direction
 	# Choose the velocity for the mob.
-	var velocity = Vector2(1.0, 0.0) * randf_range(150.0, 250.0)
+	var velocity = Vector2(1.0, 0.0) * (randf_range(150.0, 250.0) + score * 10)
 	mob.linear_velocity = velocity.rotated(direction)
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
